@@ -1,6 +1,46 @@
-<!doctype html>
-<html>
-<head>
-<p> Welcome </p>
-</head>
-</html>
+<HTML>
+<head>  </head>
+<form name = "Form1">
+<body>   
+<p>
+<input type="text" name="UserIncome"/> Input your Income 
+</p>
+<p>
+<input type= "button" value= "Calculate Income" onclick="CalcFunction ()"/> 
+</p>
+
+
+<script type="text/javascript">
+
+
+function CalcFunction () {
+    var Income = parseFloat(document.Form1.UserIncome.value);
+    var AmountOfTax;
+    if (Income >= 0 && Income < 27050) {
+        AmountOfTax = Income * 0.15
+    }
+        else if (Income >= 27050 && Income < 65550 ) {
+            AmountOfTax = 4057.50 + (.275 * (Income - 27050))
+        }
+            else if (Income >= 65550 && Income <136750 ) {
+                AmountOfTax = 14654.00 + (.305 * (Income - 65550))
+            }
+                else if(Income >= 136750 && Income < 297350 ) {
+                    AmountOfTax = 36361.00 + (.355 * (Income - 136750))
+                }
+                    else if (Income >= 297350 ) {
+                        AmountOfTax = 93374.00 + (.391 * (Income - 297350))
+                    }
+                    AmountOfTax=AmountOfTax.toFixed(2);
+                    document.Form1.Result.value = AmountOfTax;               
+                    
+                };
+</script>
+
+<p>
+<input type="text" name="Result" /> Taxes due     
+</p>     
+
+</body>
+</form>
+</HTML>
