@@ -30,13 +30,14 @@ function GenData(Selected_Major) {
         Scores = data.filter(getMajor)
         function getMajor(item) {
             return item.Major == Selected_Major;
+            var templateText = document.getElementById('tableTemplate').innerHTML;
+            var compiledTemplateText = Handlebars.compile(templateText);
+            compiledHtml = compiledTemplateText ({rows: Scores})
+            document.getElementById('menuTable').innerHTML = compiledHtml
         }
     }
+    request.send(null);
 }
-var templateText = document.getElementById('tableTemplate').innerHTML;
-var compiledTemplateText = Handlebars.compile(templateText);
-compiledHtml = compiledTemplateText ({rows: Scores})
-document.getElementById('menuTable').innerHTML = compiledHtml
 </script>
 
 </html>
