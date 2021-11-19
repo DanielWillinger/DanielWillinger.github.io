@@ -35,8 +35,9 @@ function GenData(Selected_Major) {
             compiledHtml = compiledTemplateText ({rows: Scores})
             document.getElementById('menuTable').innerHTML = compiledHtml
         }
+        request.send(null);
     }
-    request.send(null);
+    
 }
 </script>
 
