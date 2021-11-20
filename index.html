@@ -33,7 +33,7 @@ function GenData(Selected_Major) {
             var templateText = document.getElementById('tableTemplate').innerHTML;
             var compiledTemplateText = Handlebars.compile(templateText);
             compiledHtml = compiledTemplateText ({rows: Scores})
-            document.getElementById('menuTable').innerHTML = compiledHtml
+            document.getElementById('menuTable').innerHTML = compiledHtml;
         }
         request.send(null);
     }
