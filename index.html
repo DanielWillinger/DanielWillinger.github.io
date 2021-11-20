@@ -22,7 +22,7 @@
 <script>
 function GenData(Selected_Major) {
     var request = new XMLHttpRequest();
-    request.open('GET','cit5students.json')
+    request.open('GET','cit5students.json');
 
     request.onload = function(){
         var data = JSON.parse(request.responseText)
