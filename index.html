@@ -30,9 +30,9 @@ function GenData(Selected_Major) {
 
         Scores = data.filter(getMajor)
         function getMajor(item) {
-            return item.Major == Selected_Major;
+            return item.major == Selected_Major;
         }
-            var templateText = document.getElementById('d1').innerHTML;
+            var templateText = document.getElementById('tableTemplate').innerHTML;
             var compiledTemplateText = Handlebars.compile(templateText);
             compiledHtml = compiledTemplateText ({rows: Scores})
             document.getElementById('d1').innerHTML = compiledHtml;
