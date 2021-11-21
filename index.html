@@ -8,10 +8,6 @@
       <button type="button" class="btn btn-primary" onclick="GenData('CIT')">Cit Majors</button>
       <button type="button" class="btn btn-primary" onclick="GenData('BUS')">Business Major</button>
   </div> 
-  <div class="container">
-    <button type="button" class="btn btn-primary" onClick="GenData('CIT')">Cit Majors</button>
-    <button type="button" class="btn btn-primary" onClick="GenData('BUS')">Business Major</button>
-</div>
 <div id='d1'></div>
 </body>
   <script type="text/x-handlebars-template" id="tableTemplate">
@@ -36,7 +32,7 @@ function GenData(Selected_Major) {
         function getMajor(item) {
             return item.Major == Selected_Major;
         }
-            var templateText = document.getElementById('tableTemplate').innerHTML;
+            var templateText = document.getElementById('d1').innerHTML;
             var compiledTemplateText = Handlebars.compile(templateText);
             compiledHtml = compiledTemplateText ({rows: Scores})
             document.getElementById('d1').innerHTML = compiledHtml;
